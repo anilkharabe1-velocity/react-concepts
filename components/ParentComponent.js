@@ -1,10 +1,10 @@
 import BasicComponent from "./BasicComponent";
 import ChildComponent from "./ChildComponent";
-import Counter from "./Counter";
-import UserInput from "./UserInput";
-import DarkMode from "./DarkMode";
-import DarkModeParent from "./DarkModeParent";
-import RegistrationForm from "./RegistrationForm";
+import UseStateParent from "./useState/UseStateParent";
+
+import BasicUseEffect from "./useEffect/BasicUseEffect";
+import UseEffectComponent from "./useEffect/UseEffectComponent";
+import APIWithUseEffect from "./useEffect/APIWithUseEffect";
 
 const ParentComponent = () => {
   let obj = {
@@ -18,16 +18,15 @@ const ParentComponent = () => {
       <BasicComponent />
       <hr></hr>
       <ChildComponent a={10} b={20} name="Rohan" data={obj} />
+
       <hr />
-      <Counter></Counter>
+      {/* <UseStateParent /> */}
+      {/* <BasicUseEffect /> */}
+
       <hr></hr>
-      <UserInput />
+      <UseEffectComponent />
       <hr></hr>
-      <DarkMode />
-      <hr />
-      <DarkModeParent />
-      <hr></hr>
-      <RegistrationForm />
+      <APIWithUseEffect />
     </>
   );
 };

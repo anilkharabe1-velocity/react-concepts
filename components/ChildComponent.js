@@ -1,11 +1,4 @@
 const ChildComponent = ({ a, b, name, data }) => {
-  //   console.log("props", props);
-
-  //   const { a, b } = props;
-  console.log("a:", a);
-  console.log("b:", b);
-  console.log("data:", data);
-
   return (
     <div>
       Child Component with props communication
