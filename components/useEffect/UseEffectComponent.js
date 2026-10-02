@@ -4,12 +4,14 @@ const UseEffectComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  console.log("re-rendering");
   useEffect(() => {
     console.log("useEffect called");
-  }, [firstName, lastName]);
+  }, []);
 
   return (
     <>
+      <h2>UseEffectComponent </h2>
       <input
         type="text"
         value={firstName}

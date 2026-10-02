@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const APIWithUseEffect = () => {
   const [user, setUser] = useState({});
+  console.log("re-rendering");
 
   useEffect(() => {
     apiCall();

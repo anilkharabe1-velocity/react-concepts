@@ -6,6 +6,9 @@ import BasicUseEffect from "./useEffect/BasicUseEffect";
 import UseEffectComponent from "./useEffect/UseEffectComponent";
 import APIWithUseEffect from "./useEffect/APIWithUseEffect";
 
+import User from "./classBasedComponent/User";
+import UserClass from "./classBasedComponent/UserClass";
+
 const ParentComponent = () => {
   let obj = {
     name: "Rohan",
@@ -15,18 +18,22 @@ const ParentComponent = () => {
 
   return (
     <>
-      <BasicComponent />
+      {/* <BasicComponent /> */}
       <hr></hr>
-      <ChildComponent a={10} b={20} name="Rohan" data={obj} />
+      {/* <ChildComponent a={10} b={20} name="Rohan" data={obj} /> */}
 
       <hr />
       {/* <UseStateParent /> */}
       {/* <BasicUseEffect /> */}
 
       <hr></hr>
-      <UseEffectComponent />
+      {/* <UseEffectComponent /> */}
       <hr></hr>
-      <APIWithUseEffect />
+      {/* <APIWithUseEffect /> */}
+
+      <User name={"Saee -  (Function)"} city={"New Delhi"} />
+      <hr />
+      <UserClass name={"Gauri -  (class)"} city={"New Mumbai"} />
     </>
   );
 };
