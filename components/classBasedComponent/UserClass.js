@@ -2,26 +2,52 @@ import React from "react";
 
 class UserClass extends React.Component {
   constructor(props) {
-    console.log("props from class", props);
+    console.log("constructor");
     super(props);
 
     this.state = {
       count: 0,
       count2: 0,
+      userData: {
+        name: "Dummy Name",
+        address: {
+          city: "Dummy City",
+        },
+        phone: "+9 023923627365",
+      },
     };
   }
 
-  render() {
-    console.log("this.state", this.state);
+  async componentDidMount() {
+    // api call
+    console.log("componentDidMount");
+    const res = await fetch("https://jsonplaceholder.typicode.com/users/2");
+    const response = await res.json();
+    this.setState({
+      userData: response,
+    });
+  }
 
-    const { name, city } = this.props;
+  componentDidUpdate() {
+    console.log("componentDidUpdate function called");
+  }
+
+  componentWillUnmount() {
+    console.log("ComponentWIllUnmount");
+  }
+
+  render() {
+    console.log("Render function");
+
+    // const { name, city } = this.props;
     const { count, count2 } = this.state;
+    const { name, address, phone } = this.state.userData;
 
     return (
       <div>
         <h2>Name: {name}</h2>
-        <h3>City: {city}</h3>
-        <h4>Contact: +91 39483846762</h4>
+        <h3>City: {address.city}</h3>
+        <h4>Contact: {phone}</h4>
         <h4>Counter: {count}</h4>
         <button
           onClick={() => {
@@ -32,7 +58,6 @@ class UserClass extends React.Component {
         >
           Increase Counter
         </button>
-        <h4>Counter2: {count2}</h4>
       </div>
     );
   }
