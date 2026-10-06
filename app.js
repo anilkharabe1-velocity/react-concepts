@@ -7,15 +7,27 @@ import Counter from "./components/useState/Counter";
 import DarkMode from "./components/useState/DarkMode";
 import BasicUseEffect from "./components/useEffect/BasicUseEffect";
 import APIWithUseEffect from "./components/useEffect/APIWithUseEffect";
+import GrandParent from "./components/propDrilling/GrandParent";
+import UserContext from "./components/utils/UserContext.";
+
 import Footer from "./components/Footer";
 import Error from "./components/Error";
+import { useEffect, useState } from "react";
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState({ loggedInUser: "Bhallel Dev" });
+
+  useEffect(() => {}, []);
+
   return (
     <div className="app">
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{ loggedInUser: "Bahubali" }}>
+        <Header />
+        <UserContext.Provider value={userName}>
+          <Outlet />
+        </UserContext.Provider>
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 };
@@ -49,6 +61,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/apiwithuseeffect",
         element: <APIWithUseEffect />,
+      },
+      {
+        path: "/grandparent",
+        element: <GrandParent />,
       },
     ],
     errorElement: <Error />,
