@@ -15,17 +15,17 @@ import Error from "./components/Error";
 import { useEffect, useState } from "react";
 
 const AppLayout = () => {
-  const [userName, setUserName] = useState({ loggedInUser: "Bhallel Dev" });
+  const [userName, setUserName] = useState();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setUserName("Bahubali");
+  }, []);
 
   return (
     <div className="app">
-      <UserContext.Provider value={{ loggedInUser: "Bahubali" }}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <Header />
-        <UserContext.Provider value={userName}>
-          <Outlet />
-        </UserContext.Provider>
+        <Outlet />
         <Footer />
       </UserContext.Provider>
     </div>
