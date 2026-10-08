@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import Header from "./components/Header";
 import BasicComponent from "./components/BasicComponent";
@@ -12,7 +14,7 @@ import UserContext from "./components/utils/UserContext.";
 
 import Footer from "./components/Footer";
 import Error from "./components/Error";
-import { useEffect, useState } from "react";
+import appStore from "./components/redux/appStore";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -23,11 +25,13 @@ const AppLayout = () => {
 
   return (
     <div className="app">
-      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      <Provider store={appStore}>
+        <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };

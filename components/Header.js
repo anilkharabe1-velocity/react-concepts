@@ -1,9 +1,23 @@
 import { useContext } from "react";
 import UserContext from "./utils/UserContext.";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const data = useContext(UserContext);
-  console.log("data", data);
+
+  //selector
+
+  const cart = useSelector((store) => {
+    return store.cart.products;
+  });
+
+  const userName = useSelector((store) => {
+    return store.user.userName;
+  });
+
+  console.log("cart", cart);
+
   return (
     <div className="nav-items">
       <ul>
@@ -11,21 +25,23 @@ const Header = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/basiccomponent">Basic Component: props</Link>
+          <Link to="/basiccomponent">props</Link>
         </li>
         <li>
-          <Link to="/counter">UseState: Counter</Link>
+          <Link to="/counter">Counter</Link>
         </li>
         <li>
-          <Link to="/darkmode">UserState: Dark Mode</Link>
+          <Link to="/darkmode">Dark Mode</Link>
         </li>
         <li>
-          <Link to="/basicuseeffect">UseEffect: BasicUseEffect</Link>
+          <Link to="/basicuseeffect">BasicUseEffect</Link>
         </li>
         <li>
-          <Link to="/apiwithuseeffect">UseEffect: APIWithUseEffect</Link>
+          <Link to="/apiwithuseeffect">APIWithUseEffect</Link>
         </li>
-        <li>{data.loggedInUser}</li>
+        <li>Context UserName: {data.loggedInUser}</li>
+        <li>Redux Cart: {cart.length}</li>
+        <li>Redux UserName: {userName}</li>
       </ul>
     </div>
   );
