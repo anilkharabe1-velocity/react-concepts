@@ -24,7 +24,7 @@ const Header = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/basiccomponent">props</Link>
         </li>
         <li>
@@ -35,9 +35,12 @@ const Header = () => {
         </li>
         <li>
           <Link to="/basicuseeffect">BasicUseEffect</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/apiwithuseeffect">APIWithUseEffect</Link>
+        </li>
+        <li>
+          <Link to="/apiwithrq">APIWithRQ</Link>
         </li>
         <li>Context UserName: {data.loggedInUser}</li>
         <li>Redux Cart: {cart.length}</li>
