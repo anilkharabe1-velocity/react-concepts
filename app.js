@@ -17,6 +17,8 @@ import UserContext from "./components/utils/UserContext.";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 import appStore from "./components/redux/appStore";
+import RQUserDetails from "./components/tanstackQuery/RQUserDetails";
+import BasicUseRef from "./components/useRef/BasicUseRef";
 
 const queryClient = new QueryClient();
 const AppLayout = () => {
@@ -61,6 +63,10 @@ const appRouter = createBrowserRouter([
         element: <Counter />,
       },
       {
+        path: "/counterwithuseRef",
+        element: <BasicUseRef />,
+      },
+      {
         path: "/darkmode",
         element: <DarkMode />,
       },
@@ -79,6 +85,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/apiwithrq",
         element: <APIWithRQ />,
+      },
+      {
+        path: "/apiwithrq/:userId",
+        element: <RQUserDetails />,
       },
     ],
     errorElement: <Error />,

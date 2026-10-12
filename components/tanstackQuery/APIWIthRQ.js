@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const APIWithRQ = () => {
   // https://jsonplaceholder.typicode.com/users/1 =>queryKey: ["users", users.id],
@@ -12,6 +13,8 @@ const APIWithRQ = () => {
       return axios.get("https://jsonplaceholder.typicode.com/users");
     },
     staleTime: 20000,
+    // refetchInterval: 1000,
+    // refetchIntervalInBackground: true,
   });
 
   if (isLoading) {
@@ -34,9 +37,10 @@ const APIWithRQ = () => {
     <>
       {data?.data?.map((user) => (
         <div key={user.id}>
-          <h1> User Information</h1>
-          <h3>Name: {user.name}</h3>
-          <h5>email: {user.email}</h5>
+          <Link to={`/apiwithrq/${user.id}`}>
+            <h3>Name: {user.name}</h3>
+            <h5>email: {user.email}</h5>
+          </Link>
           <hr />
         </div>
       ))}
@@ -45,3 +49,7 @@ const APIWithRQ = () => {
 };
 
 export default APIWithRQ;
+
+// create a RQUserDetails component
+// configure routing
+// LINK tag - configure

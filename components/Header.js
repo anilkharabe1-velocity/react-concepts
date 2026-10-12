@@ -16,7 +16,7 @@ const Header = () => {
     return store.user.userName;
   });
 
-  console.log("cart", cart);
+  // console.log("cart", cart);
 
   return (
     <div className="nav-items">
@@ -26,11 +26,14 @@ const Header = () => {
         </li>
         {/* <li>
           <Link to="/basiccomponent">props</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/counter">Counter</Link>
         </li>
         <li>
+          <Link to="/counterwithuseRef">Counter With Use Ref</Link>
+        </li>
+        {/* <li>
           <Link to="/darkmode">Dark Mode</Link>
         </li>
         <li>
