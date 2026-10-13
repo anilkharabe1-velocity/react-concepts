@@ -19,6 +19,7 @@ import Error from "./components/Error";
 import appStore from "./components/redux/appStore";
 import RQUserDetails from "./components/tanstackQuery/RQUserDetails";
 import BasicUseRef from "./components/useRef/BasicUseRef";
+import PostRQ from "./components/tanstackQuery/PostRQ";
 
 const queryClient = new QueryClient();
 const AppLayout = () => {
@@ -85,6 +86,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/apiwithrq",
         element: <APIWithRQ />,
+      },
+      {
+        path: "/postrq",
+        element: <PostRQ />,
       },
       {
         path: "/apiwithrq/:userId",

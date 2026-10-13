@@ -45,6 +45,9 @@ const Header = () => {
         <li>
           <Link to="/apiwithrq">APIWithRQ</Link>
         </li>
+        <li>
+          <Link to="/postrq">Post RQ</Link>
+        </li>
         <li>Context UserName: {data.loggedInUser}</li>
         <li>Redux Cart: {cart.length}</li>
         <li>Redux UserName: {userName}</li>
