@@ -27,11 +27,20 @@ const Header = () => {
         {/* <li>
           <Link to="/basiccomponent">props</Link>
         </li> */}
-        <li>
+        {/* <li>
           <Link to="/counter">Counter</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/counterwithuseRef">Counter With Use Ref</Link>
+        </li>
+        <li>
+          <Link to="/studentform">Student Form: useRef</Link>
+        </li>
+        <li>
+          <Link to="/registrationform">Student Form: useState</Link>
+        </li>
+        <li>
+          <Link to="/domaccess">Dom Access</Link>
         </li>
         {/* <li>
           <Link to="/darkmode">Dark Mode</Link>
@@ -39,9 +48,9 @@ const Header = () => {
         <li>
           <Link to="/basicuseeffect">BasicUseEffect</Link>
         </li> */}
-        <li>
+        {/* <li>
           <Link to="/apiwithuseeffect">APIWithUseEffect</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/apiwithrq">APIWithRQ</Link>
         </li>

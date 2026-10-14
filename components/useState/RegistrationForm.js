@@ -7,8 +7,9 @@ const RegistrationForm = () => {
     email: "rahul@gmail.com",
   });
 
+  console.log("re-render useState ");
+
   const handleChange = (event) => {
-    console.log(event);
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 

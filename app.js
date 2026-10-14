@@ -20,6 +20,9 @@ import appStore from "./components/redux/appStore";
 import RQUserDetails from "./components/tanstackQuery/RQUserDetails";
 import BasicUseRef from "./components/useRef/BasicUseRef";
 import PostRQ from "./components/tanstackQuery/PostRQ";
+import StudentForm from "./components/useRef/DataManagement";
+import RegistrationForm from "./components/useState/RegistrationForm";
+import DomAccess from "./components/useRef/DOMAccess";
 
 const queryClient = new QueryClient();
 const AppLayout = () => {
@@ -39,7 +42,7 @@ const AppLayout = () => {
             <Footer />
           </UserContext.Provider>
         </Provider>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </div>
   );
@@ -94,6 +97,18 @@ const appRouter = createBrowserRouter([
       {
         path: "/apiwithrq/:userId",
         element: <RQUserDetails />,
+      },
+      {
+        path: "/studentform",
+        element: <StudentForm />,
+      },
+      {
+        path: "/registrationform",
+        element: <RegistrationForm />,
+      },
+      {
+        path: "/domaccess",
+        element: <DomAccess />,
       },
     ],
     errorElement: <Error />,

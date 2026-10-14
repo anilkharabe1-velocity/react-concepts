@@ -1,7 +1,15 @@
 import { useRef, useState } from "react";
 const BasicUseRef = () => {
-  const counterRef = useRef(0);
+  //useRef counter
   const [counterState, setCounterState] = useState(0);
+
+  const counterRef = useRef(0);
+  // counterRef = {
+  //   current : 0
+  // }
+
+  //useState counter
+  console.log("Re_Render");
 
   const increaseValue = () => {
     counterRef.current = counterRef.current + 1;
