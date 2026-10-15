@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -23,6 +23,14 @@ import PostRQ from "./components/tanstackQuery/PostRQ";
 import StudentForm from "./components/useRef/DataManagement";
 import RegistrationForm from "./components/useState/RegistrationForm";
 import DomAccess from "./components/useRef/DOMAccess";
+// import BigComponent from "./components/BigComponent";
+
+// code spliting = > multiple file
+// on demand loading
+// lazy loading
+// chunking
+
+const BigComponent = lazy(() => import("./components/BigComponent"));
 
 const queryClient = new QueryClient();
 const AppLayout = () => {
@@ -109,6 +117,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/domaccess",
         element: <DomAccess />,
+      },
+      {
+        path: "/bigcomponent",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <BigComponent />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,

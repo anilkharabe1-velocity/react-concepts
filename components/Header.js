@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import UserContext from "./utils/UserContext.";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
+  console.log(" re-render");
   const data = useContext(UserContext);
 
   //selector
@@ -42,10 +43,10 @@ const Header = () => {
         <li>
           <Link to="/domaccess">Dom Access</Link>
         </li>
-        {/* <li>
+        <li>
           <Link to="/darkmode">Dark Mode</Link>
         </li>
-        <li>
+        {/*<li>
           <Link to="/basicuseeffect">BasicUseEffect</Link>
         </li> */}
         {/* <li>
@@ -57,7 +58,13 @@ const Header = () => {
         <li>
           <Link to="/postrq">Post RQ</Link>
         </li>
-        <li>Context UserName: {data.loggedInUser}</li>
+        <li>
+          <Link to="/grandparent">Parent-Child Relation</Link>
+        </li>
+        <li>
+          <Link to="/bigcomponent">Big Component</Link>
+        </li>
+        {/* <li>Context UserName: {data.loggedInUser}</li>*/}
         <li>Redux Cart: {cart.length}</li>
         <li>Redux UserName: {userName}</li>
       </ul>
@@ -65,4 +72,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

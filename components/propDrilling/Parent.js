@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import UserContext from "../utils/UserContext.";
+import { useContext, memo } from "react";
 
+import UserContext from "../utils/UserContext.";
 import Child from "./Child";
 
 const Parent = ({ value }) => {
   const data = useContext(UserContext);
+
+  console.log("parent component- re-render");
 
   return (
     <div>
@@ -15,4 +17,4 @@ const Parent = ({ value }) => {
   );
 };
 
-export default Parent;
+export default memo(Parent);

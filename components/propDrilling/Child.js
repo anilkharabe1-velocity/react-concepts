@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import ValueContext from "../utils/ValueContex";
 import UserContext from "../utils/UserContext.";
 
 const Child = ({ value }) => {
   const data = useContext(UserContext);
-  console.log("data from child", data);
+  console.log("child re-render");
   return (
     <div>
       <h1>This is Child Component, and value is {value}</h1>
@@ -19,4 +19,4 @@ const Child = ({ value }) => {
   );
 };
 
-export default Child;
+export default memo(Child);
