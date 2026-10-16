@@ -56,17 +56,23 @@ const Header = () => {
           <Link to="/apiwithrq">APIWithRQ</Link>
         </li>
         <li>
-          <Link to="/postrq">Post RQ</Link>
+          <Link to="/usememodemo">useMemo Demo</Link>
         </li>
         <li>
+          <Link to="/usecallbackdemo">useCallback Demo</Link>
+        </li>
+        {/* <li>
+          <Link to="/postrq">Post RQ</Link>
+        </li> */}
+        {/* <li>
           <Link to="/grandparent">Parent-Child Relation</Link>
         </li>
         <li>
           <Link to="/bigcomponent">Big Component</Link>
-        </li>
+        </li> */}
         {/* <li>Context UserName: {data.loggedInUser}</li>*/}
-        <li>Redux Cart: {cart.length}</li>
-        <li>Redux UserName: {userName}</li>
+        {/* <li>Redux Cart: {cart.length}</li>
+        <li>Redux UserName: {userName}</li> */}
       </ul>
     </div>
   );

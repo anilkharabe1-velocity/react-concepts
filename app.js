@@ -23,6 +23,8 @@ import PostRQ from "./components/tanstackQuery/PostRQ";
 import StudentForm from "./components/useRef/DataManagement";
 import RegistrationForm from "./components/useState/RegistrationForm";
 import DomAccess from "./components/useRef/DOMAccess";
+import UseMemoDemo from "./components/useMemo/UseMemoEg";
+import UseCallbackDemo from "./components/useCallback/UseCallbackDemo";
 // import BigComponent from "./components/BigComponent";
 
 // code spliting = > multiple file
@@ -117,6 +119,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/domaccess",
         element: <DomAccess />,
+      },
+      {
+        path: "/usememodemo",
+        element: <UseMemoDemo />,
+      },
+      {
+        path: "/usecallbackdemo",
+        element: <UseCallbackDemo />,
       },
       {
         path: "/bigcomponent",
