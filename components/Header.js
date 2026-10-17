@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  console.log(" re-render");
   const data = useContext(UserContext);
 
   //selector

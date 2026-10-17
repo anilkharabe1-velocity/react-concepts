@@ -9,7 +9,7 @@ const BasicUseRef = () => {
   // }
 
   //useState counter
-  console.log("Re_Render");
+  // console.log("Re_Render");
 
   const increaseValue = () => {
     counterRef.current = counterRef.current + 1;

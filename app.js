@@ -32,6 +32,9 @@ import UseCallbackDemo from "./components/useCallback/UseCallbackDemo";
 // lazy loading
 // chunking
 
+// console.log(<Error />); // object => virtual dom (object) => actual dom
+console.log(<BasicUseRef />);
+
 const BigComponent = lazy(() => import("./components/BigComponent"));
 
 const queryClient = new QueryClient();
