@@ -25,6 +25,8 @@ import RegistrationForm from "./components/useState/RegistrationForm";
 import DomAccess from "./components/useRef/DOMAccess";
 import UseMemoDemo from "./components/useMemo/UseMemoEg";
 import UseCallbackDemo from "./components/useCallback/UseCallbackDemo";
+import ParentComponent from "./components/HigherOrderComponent/ParentComponent";
+import FlipkartParentComponent from "./components/HigherOrderComponent/flipkartOffer/ParentComponent";
 // import BigComponent from "./components/BigComponent";
 
 // code spliting = > multiple file
@@ -130,6 +132,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/usecallbackdemo",
         element: <UseCallbackDemo />,
+      },
+      {
+        path: "/hoc",
+        element: <ParentComponent />,
+      },
+      {
+        path: "/flipkarthoc",
+        element: <FlipkartParentComponent />,
       },
       {
         path: "/bigcomponent",

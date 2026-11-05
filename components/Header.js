@@ -60,6 +60,13 @@ const Header = () => {
         <li>
           <Link to="/usecallbackdemo">useCallback Demo</Link>
         </li>
+        <li>
+          <Link to="/hoc">HOC Demo</Link>
+        </li>
+        <li>
+          <Link to="/flipkarthoc">Flipkart</Link>
+        </li>
+
         {/* <li>
           <Link to="/postrq">Post RQ</Link>
         </li> */}
