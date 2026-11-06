@@ -27,6 +27,7 @@ import UseMemoDemo from "./components/useMemo/UseMemoEg";
 import UseCallbackDemo from "./components/useCallback/UseCallbackDemo";
 import ParentComponent from "./components/HigherOrderComponent/ParentComponent";
 import FlipkartParentComponent from "./components/HigherOrderComponent/flipkartOffer/ParentComponent";
+import ChildrenParent from "./components/children/example1";
 // import BigComponent from "./components/BigComponent";
 
 // code spliting = > multiple file
@@ -140,6 +141,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/flipkarthoc",
         element: <FlipkartParentComponent />,
+      },
+      {
+        path: "/children",
+        element: <ChildrenParent />,
       },
       {
         path: "/bigcomponent",
